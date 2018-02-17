@@ -5,3 +5,7 @@
 ```
 $ ggg
 ```
+
+## necessary
+
+- fzf
