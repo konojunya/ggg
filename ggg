@@ -1,0 +1,27 @@
+#!/bin/bash
+
+function start() {
+	# staging
+	git add -A
+	
+	# commit
+	echo "input commit message."
+	echo "> "; read commitmsg
+	if [ -z $commitmsg ]; then
+		commitmsg="update"
+	fi
+
+	git commit -m $commitmsg
+
+	# pull
+
+	# push
+	git push origin head
+}
+
+if [ -e "$PWD/.git" ]; then
+	start
+else
+	echo "not here..."
+fi
+
