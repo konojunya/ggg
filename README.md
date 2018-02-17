@@ -1,1 +1,7 @@
 # git cli
+
+## using
+
+```
+$ ggg
+```
