@@ -7,7 +7,7 @@ function start() {
 	# commit
 	printf "input commit message.\n> "
 	read -r commitmsg
-	if [ -z $commitmsg ]; then
+	if [ -z "$commitmsg" ]; then
 		commitmsg="update"
 	fi
 	git commit -m "$commitmsg"
