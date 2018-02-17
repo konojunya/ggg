@@ -10,9 +10,11 @@ function start() {
 	if [ -z $commitmsg ]; then
 		commitmsg="update"
 	fi
-	git commit -m $commitmsg
+	git commit -m "$commitmsg"
 
 	# pull
+	echo "select pull branch."
+	sleep 0.5
 	git branch | fzf | read branch
 	git pull origin $branch
 
