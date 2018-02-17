@@ -1,0 +1,6 @@
+path="$PWD/.git"
+if [ -e $path ]; then
+	echo "here!"
+else
+	echo "not here..."
+fi
