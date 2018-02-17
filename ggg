@@ -5,15 +5,16 @@ function start() {
 	git add -A
 	
 	# commit
-	echo "input commit message."
-	echo "> "; read commitmsg
+	printf "input commit message.\n> "
+	read -r commitmsg
 	if [ -z $commitmsg ]; then
 		commitmsg="update"
 	fi
-
 	git commit -m $commitmsg
 
 	# pull
+	git branch | fzf | read branch
+	git pull origin $branch
 
 	# push
 	git push origin head
@@ -22,6 +23,6 @@ function start() {
 if [ -e "$PWD/.git" ]; then
 	start
 else
-	echo "not here..."
+	echo "this dir is not git project."
 fi
 
